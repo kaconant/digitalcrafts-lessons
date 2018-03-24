@@ -1,20 +1,9 @@
 <!--- 
 Your task, should you choose to accept it, is to make a "Friend request form".
-
-When completed, people will be able to fill out the form to request to be your friend. 
-You can use their responses to decide if you want to be their friend. 
-For example, I only want to be friends with people who watch Game of Thrones, so I could have a question in my form like:
-
-Do you watch Game of Thrones?
-
-O Yes .   O No .   O I might one day
-
 You can decide what questions are on the form! Have fun with it, but there are some requirements:
     
 - Implement a dropdown menu, a textarea, radio buttons, and checkboxes
-
 - Implement a submit button (make sure to include type="submit")
-
 - Make the form email yourself when it's submitted (hint: onsubmit="mailto:email@address.com") -->
 
 <!DOCTYPE HTML>
@@ -42,72 +31,71 @@ You can decide what questions are on the form! Have fun with it, but there are s
             </ul>
         </nav>
         <!--body-->
-        <form class="container" action="mailto:krissyconant@gmailcom" method="post">
-            <div class="row">
-                <div class="col-md-12 col-md-offset-3" id="titleLine">
-                    <h2>The Krissy Friendship Application</h2>
-                    <h5 class="lead">Krissy is currently taking applications for new friends. Please apply below!</h5>
+        <div class="container">
+            <form action="mailto:krissyconant@gmail.com" method="post">
+                <div class="row">
+                    <div class="col-md-12" id="titleLine">
+                        <h2>The Krissy Friendship Application</h2>
+                        <h5 class="lead">Krissy is currently taking applications for new friends. Please apply below!</h5>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                    <label for="name">Your Name: </label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Insert Name" required>
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="name">Your Name: </label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Insert Name" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Insert Email" required>
+                    </div>
                 </div>
-                <div class="col-sm-6 form-group">
-                    <label for="email">Email:</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Insert Email" required>
+                <div class="form-group">
+                    <h5>Do you like Sailor Moon?</h5>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes, she's the Moon Princess, so obvs!</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No, that show is for suckers.</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio2">...Wut?</label>
+                    </div>
                 </div>
-            </div>
-            <h5>Do you like Sailor Moon?</h5>
-            <div class="form-group">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Yes, she's the Moon Princess, so obvs!</label>
+                <div class="form-check">
+                <h5>How many of the following bands do you like?</h5>
+                    <input class="form-check-input" type="checkbox" name="checkboxinput" value="FleetFoxes" id="defaultCheck1">Fleet Foxes</input>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">No, that show is for suckers.</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkboxinput" value="HAIM" id="defaultCheck2">HAIM</input>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                    <label class="form-check-label" for="inlineRadio2">...Wut?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkboxinput" value="Lorde" id="defaultCheck3">Lorde</input>
                 </div>
-            </div>
-            <h5>How many of the following bands do you like?</h5>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="FleetFoxes" id="defaultCheck1">Fleet Foxes</label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="HAIM" id="defaultCheck2">HAIM</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Lorde" id="defaultCheck3">Lorde</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="ColdPlay" id="defaultCheck4">Coldplay</label>
-            </div>
-            <div class="container">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkboxinput" value="ColdPlay" id="defaultCheck4">Coldplay</input>
+                </div>
                 <div class="menu">
-                    <select class="custom-select">
+                    <select class="custom-select" name="zodiac">
                         <option selected>What is your Zodiac Sign?</option>
-                        <option value="1">Aries</option>
-                        <option value="2">Taurus</option>
-                        <option value="3">Gemini</option>
-                        <option value="4">Cancer</option>
-                        <option value="5">Leo</option>
-                        <option value="6">Virgo</option>
-                        <option value="7">Libra</option>
-                        <option value="8">Scorpio</option>
-                        <option value="9">Sagittarius</option>
-                        <option value="10">Capricorn</option>
-                        <option value="11">Aquarius</option>
-                        <option value="12">Pisces</option>
+                        <option value="1" name="zodiac">Aries</option>
+                        <option value="2" name="zodiac">Taurus</option>
+                        <option value="3" name="zodiac">Gemini</option>
+                        <option value="4" name="zodiac">Cancer</option>
+                        <option value="5" name="zodiac">Leo</option>
+                        <option value="6" name="zodiac">Virgo</option>
+                        <option value="7" name="zodiac">Libra</option>
+                        <option value="8" name="zodiac">Scorpio</option>
+                        <option value="9" name="zodiac">Sagittarius</option>
+                        <option value="10" name="zodiac">Capricorn</option>
+                        <option value="11" name="zodiac">Aquarius</option>
+                        <option value="12" name="zodiac">Pisces</option>
                     </select>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-secondary" value="Send">Submit</button>
-        </form>
+                <button type="submit" class="btn btn-secondary" value="Send">Submit</button>
+            </form>
+        </div>    
     </body>
 </html>
