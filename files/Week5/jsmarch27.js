@@ -190,7 +190,7 @@ factor(100);
 // Leetspeak
 
 function leetspeak(theWords) {
-    var leet = {"a":4, "e":3, "g":6, "i":1, "o":0, "s":5, "t":7 };
+    var leet = {"a": 4, "e": 3, "g": 6, "i": 1, "o": 0, "s": 5, "t": 7 };
     var lowerCase = theWords.toLowerCase();
     for (x in lowerCase){
     for (y in leet){

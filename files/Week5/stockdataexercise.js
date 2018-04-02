@@ -1,17 +1,19 @@
-/* var days = Object.keys(stocks)
-
-days.forEach(function (day) {
-    console.log(stocks[day]);
-});
-
-var dataz = days.map(function (day) {
-    return stocks[day];
-}); 
+/* 
 
 Write functions to get the avg for the "open", "high", "low", and "close" values for all days.
 Write a function to find the highest "high" for all days.
 Write a function to find the lowest "low' for all days.
 Write a function that produces an array of objects. Each object: date, open, and close.
+    
+    var days = Object.keys(stocks)
+
+    days.forEach(function (day) {
+        console.log(stocks[day]);
+    });
+
+    var dataz = days.map(function (day) {
+        return stocks[day];
+    }); 
 
 */
 
@@ -718,3 +720,32 @@ var stocks = {
     }
 };
 
+var days = Object.keys(stocks)
+
+var dataz = days.map(function (day) {
+    return stocks[day];
+});
+
+var alltimelow = 999999;
+var alltimehigh = 0;
+var count = 0;
+var avgopen = 0;
+var avghigh = 0;
+var avglow = 0;
+var avgclose = 0;
+var avgvolume = 0;
+
+
+var averages = days.forEach(function (day) {
+    avgopen += Number(stocks[day]['1. open']);
+    avghigh += Number(stocks[day]['2. high']);
+    avglow += Number(stocks[day]['3. low']);
+    avgclose += Number(stocks[day]['4. close']);
+    avgvolume += Number(stocks[day]['5. volume']);
+    count++;
+    if(stocks[day]['2. high'] > alltimehigh){
+        alltimehigh = stocks[day]['2. high'];
+    }else if (stocks[day]['3. low'] < alltimelow){
+        alltimelow = stocks[day]['3. low'];
+    }
+});
