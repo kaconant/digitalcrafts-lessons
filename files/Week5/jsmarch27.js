@@ -100,11 +100,60 @@ function factors(number) {
 
 console.log(factors(10));
 
-// leetspeak
-// Write a function leetspeak which is given a string,
-// and returns the leetspeak equivalent of the string. 
-// To convert text to its leetspeak version, 
-// make the following substitutions
+// print numbers
+// Write a function printNumbers which is given a start number and an end number. 
+// It will print the numbers from one to the other, one per line:
+
+function printNumbers (x, y) {
+    var number = [];
+    for (var i = x; i < y; i++) {
+        numbers.push(i);
+    }
+    return numbers;
+}
+
+console.log(printNumbers(2, 6));
+
+//Sum of numbers
+// Write a function sumNumbers which is given an array of numbers 
+// and returns the sum of the numbers.
+
+function sumNumbers(x, y, z) {
+    var array = [];
+    for (var i = 0, sum = 0; i < array.length; 
+        sum += array[i++]);
+}
+console.log(sumNumbers(1, 2, 3));
+
+// Just the positives
+// Write a function positiveNumbers which is given an array of numbers 
+// and returns a new array containing only the positive numbers within the given array.
+
+function SumPositive(numbers) {
+    var positives = [];
+    var sum = 0;
+
+    for(var i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 0) {
+        positives.push(numbers[i]);
+        } else {
+        sum += numbers[i];
+        }
+    }
+
+    console.log(SumPositive([1, 3, 4, 5, -7, -8]));
+    return sum;
+}
+
+// Rock Paper Scissors
+// Write a function rockPaperScissors which takes the throw of player 1 
+// and the throw of player 2. A throw can have the values of 'rock', 'paper', 
+// or 'scissors'. It will return 'player 1' if player 1 wins, 'player 2' if 
+// player 2 wins, and 'draw' if there is no winner.
+
+
+
+
 
 // Tic Tac Toe
 // Write a function ticTacToe which takes a two-dimensional array of size 3x3. 
@@ -113,6 +162,7 @@ console.log(factors(10));
 // returning 'O' if O makes a row returning 'X' if 
 // X makes a row return null if neither makes a row
 
+console.log('script loaded');
 
 var testBoard = [   ["X", null, "0"], 
                     ["X", null, "X"],
@@ -133,24 +183,17 @@ function ticTacToe(board) {
 
     for (var i=0; i < winConditions.length; i++) {
 
-        var winConditions = winConditions[i];
-        
+        var winConditions = winConditions[i]; // ["X", null, "O"]
+
+        var string = "" + winConditions[0] + winConditions[1] + winConditions[2];
+
+        if (string == "XXX") {
+            return "X wins!";
+        } else if (string === "000") {
+            return "O wins!"; 
+        } 
     }
-    
-
-    var string = "" + winConditions[0] + winConditions[1] + winConditions[2];
-
-    if (string == "XXX") {
-        else if (string === "000");
-    }
-
-    if ("x wins") {
-        return "X wins!";
-    } else if ("O wins") {
-        return "O wins!"; 
-    } else { 
         return "Life is cruel"
-        }
     }
     
 console.log(ticTacToe(testBoard));            
