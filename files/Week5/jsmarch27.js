@@ -25,6 +25,7 @@ function printNumbers(i, j) {
 }
 printNumbers(2,5); */
 
+// print name
 
 console.log("script loaded");
 
@@ -33,6 +34,27 @@ function hello(name) {
     }
 
 hello("Mustache");
+
+// second hello
+
+
+function hello(name){
+    if(name) {
+    console.log('Hello '+ name);
+    } else{
+    console.log('Hello, World!')
+    }
+}
+hello('');
+hello('Mustache');
+
+// madlib
+
+function madlib(name, subject) {
+    return (name + 's favorite subject in school is '+ subject + '.');
+}
+
+madlib('Krissy', 'math');
 
 // tip calculator
 
@@ -104,26 +126,35 @@ console.log(factors(10));
 // Write a function printNumbers which is given a start number and an end number. 
 // It will print the numbers from one to the other, one per line:
 
-function printNumbers (x, y) {
-    var number = [];
-    for (var i = x; i < y; i++) {
-        numbers.push(i);
+// print 1
+function printNumbers(start, end) {
+    var i = start;
+    while(i <= end){
+        console.log(i);
+        i++;
     }
-    return numbers;
 }
 
-console.log(printNumbers(2, 6));
+//print 2
+function printNumbersfor(start,end){
+    for(var i=0;i<=end;i++){
+        console.log(i);
+    }
+}
+printNumbersfor(1,10);
 
 //Sum of numbers
 // Write a function sumNumbers which is given an array of numbers 
 // and returns the sum of the numbers.
 
-function sumNumbers(x, y, z) {
-    var array = [];
-    for (var i = 0, sum = 0; i < array.length; 
-        sum += array[i++]);
+function sum(foo) {
+    var result = 0;
+    for(x in foo){
+        result += Number(foo[x]);
+    } 
+    console.log(result);
 }
-console.log(sumNumbers(1, 2, 3));
+sum([2,3,4]);
 
 // Just the positives
 // Write a function positiveNumbers which is given an array of numbers 
@@ -145,13 +176,76 @@ function SumPositive(numbers) {
     return sum;
 }
 
+// Factor
+
+function factor(num){
+    for(var i = 1; i <= num; i++){
+        if(num % i == 0){
+        console.log(i);
+    }
+}
+}
+factor(100);
+
+// Leetspeak
+
+function leetspeak(theWords) {
+    var leet = {"a":4, "e":3, "g":6, "i":1, "o":0, "s":5, "t":7 };
+    var lowerCase = theWords.toLowerCase();
+    for (x in lowerCase){
+    for (y in leet){
+        if (lowerCase[x] == y){
+            lowerCase = lowerCase.replace(lowerCase[x], leet[y])
+        }
+    }
+}
+console.log(lowerCase);
+}
+leetspeak('I am so cool - right?');
+
+
 // Rock Paper Scissors
 // Write a function rockPaperScissors which takes the throw of player 1 
 // and the throw of player 2. A throw can have the values of 'rock', 'paper', 
 // or 'scissors'. It will return 'player 1' if player 1 wins, 'player 2' if 
 // player 2 wins, and 'draw' if there is no winner.
 
+function rockPaperScissors(player1, player2) {
+    if (player1 === player2){
+        console.log('draw');
+        return;
+    }
+    if(player1 === 'rock' ){
+        if(player2 === 'paper'){
+            console.log('player 2');
+            return;
+            }else{
+                console.log('player 1');
+                return;
+            }
+        }
+    if(player1 === 'paper' ){
+        if(player2 === 'scissors'){
+            console.log('player 2');
+            return;
+            }else{
+                console.log('player 1');
+                return;
+            }
+        }
+    if(player1 === 'scissors' ){
+        if(player2 === 'rock'){
+            console.log('player 2');
+            return;
+            }else{
+                console.log('player 1');
+                return;
+            }
+        }
+    }
 
+
+rockPaperScissors('rock', 'scissors')
 
 
 
