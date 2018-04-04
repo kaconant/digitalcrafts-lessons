@@ -258,9 +258,11 @@ rockPaperScissors('rock', 'scissors')
 
 console.log('script loaded');
 
-var testBoard = [   ["X", null, "0"], 
-                    ["X", null, "X"],
-                    ["O", null, "O"]   ]; 
+var testBoard = [   
+    ["X", null, "0"], 
+    ["X", null, "X"],
+    ["O", null, "O"]   
+]; 
 
 function ticTacToe(board) {
     
@@ -291,3 +293,20 @@ function ticTacToe(board) {
     }
     
 console.log(ticTacToe(testBoard));            
+
+/* for any game:
+
+1. State - like variables --> defining the board
+2. Action - like functions --> marking the board
+3. Actually doing the Actions --> actually marking the board
+
+var board = [
+    []
+    []
+    []
+];
+
+var whoseTurn = "X"
+
+
+*/
