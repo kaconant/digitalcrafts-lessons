@@ -72,7 +72,6 @@ function checkVictory() {
             return "O wins";
         }
     }
-
     return "No one wins" 
 }
 
