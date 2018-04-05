@@ -48,7 +48,6 @@ function playerAction() {
 }
 
 function checkVictory() {
-
     var row1 = board[0]; // ["X", null, "O"]
     var row2 = board[1]; // ["X", null, "X"]
     var row3 = board[2]; // ["O", null, "O"]
@@ -61,11 +60,8 @@ function checkVictory() {
     var winConditions = [row1, row2, row3, col1, col2, col3, diag1, diag2];
 
     for (var i=0; i<winConditions.length ; i++) {
-
         var winCondition = winConditions[i]; // ["X", null, "O"]
-
-        var string = "" + winCondition[0] + winCondition[1] + winCondition[2]; 
-
+        var string = winCondition[0] + winCondition[1] + winCondition[2]; 
         if (string == "XXX") {
             return "X wins";
         } else if (string == "OOO") {
