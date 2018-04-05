@@ -14,41 +14,54 @@ Winner takes last rock
 
 console.log("Welcome to NIM");
 
-var piles = [
-    // defining 3 piles
-    {name: "A", pebbles: "ooooo"},
-    {name: "B", pebbles: "oooooo"},
-    {name: "C", pebbles: "ooooo"},
-    
-]
-// defining player
+// defining player and pebbles
 var playerTurn = "Player 1";
+var pebbles = ["o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o"];
 
 function printBoard() {
     // making pile physically
+    console.log(pebbles);
     console.log("********");
-    piles.forEach(function (pebble) {
-        console.log("Pile " + pebble.name + ": " + pebble.pebbles);
-    });
-    }
+    };
 
 function getUserMove() {
     // set up move
-    var pebbleInfo = parseInt(prompt(playerTurn + ": How many pebbles would you like to remove? 1, 2, or 3? "));
-    return pebbleInfo;    
+    var pebbleInfo = prompt(playerTurn + ": How many pebbles would you like to remove? 1, 2, or 3? ");
+    if (pebbleInfo === "") {
+        return false;
+    }
+    else {
+        return parseInt(pebbleInfo);
+    }
 }
 
 function makeMove() {
     // do move
     var takePebble = getUserMove();
-    if 
+    // bam opperator 
+    if (checkPile() === false) {
+        for (var i=0; i <= takePebble; i++) {
+            pebbles.pop();
+        }
+        if (playerTurn === "Player 1") {
+            playerTurn = "Player 2";
+        } else {
+            playerTurn = "Player 1";
+        }
+    }
+    printBoard();
 }
 
 function checkPile() {
     // see if pebbles are left
-    var winConditions = 1;
-    for (var i=0; i < piles.length; i++)
+    if (pebbles.length <= 3) {
+        alert(playerTurn + ", you've won!")
+        return true;
+    }; 
+    return false;
 }
 
 //call game
-checkPile();
+while (checkPile() === false && typeof getUserMove() === "number") {
+    makeMove();
+}
