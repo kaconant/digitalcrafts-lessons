@@ -12,37 +12,35 @@ Remove 1, 2, 3 rocks
 Winner takes last rock
 */
 
-console.log("Welcome to NIM");
+console.log("Welcome to NIMS");
+console.log("The winner grabs the last pebble - begin!");
 
 // defining player and pebbles
 var playerTurn = "Player 1";
 var pebbles = ["o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o"];
 
 function printBoard() {
-    // making pile physically
+    // making physical pile
     console.log(pebbles);
     console.log("********");
     };
 
 function getUserMove() {
-    // set up move
+    // asking player to choose number
     var pebbleInfo = prompt(playerTurn + ": How many pebbles would you like to remove? 1, 2, or 3? ");
-    if (pebbleInfo === "") {
-        return false;
-    }
-    else {
         return parseInt(pebbleInfo);
-    }
 }
 
 function makeMove() {
-    // do move
+    // taking value of number
     var takePebble = getUserMove();
     // bam opperator 
-    if (checkPile() === false) {
-        for (var i=0; i <= takePebble; i++) {
+    // taking value and checking to see if it works between 1-3
+    if (takePebble == 1 || takePebble == 2 || takePebble ==3) {
+        for (var i=1; i <= takePebble; i++) {
             pebbles.pop();
         }
+        // changes player
         if (playerTurn === "Player 1") {
             playerTurn = "Player 2";
         } else {
@@ -62,6 +60,7 @@ function checkPile() {
 }
 
 //call game
-while (checkPile() === false && typeof getUserMove() === "number") {
+while (checkPile() === false) {
     makeMove();
 }
+printBoard();

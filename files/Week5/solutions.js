@@ -8,7 +8,7 @@ function averageOpen() {
         var statsForAGivenDay = stocks[currentDay]; // as it's not a key value pair, it's an object inside a variable
         // var statsForAGivenDay = stocks[days[i]]; combo of code above
         var openValue = parseFloat(statsForAGivenDay["1. open"]); // for this object, lets extract and grab this key // parseFloat = turns into number from string // can also use Number
-        sum = sum + openValue;
+        sum += openValue;
     }
     // divide sum by number of days
     var average = sum / days.length;
@@ -21,7 +21,6 @@ Example 2 - How to do specific Function that will work for all...
 var average = function(valueOfInterest) { 
     var sum = 0;
     var days = Object.keys(stocks);
-
     for(var i = 0; i < days.length; i++) {
         var currentDay = days[i];
         var statsForAGivenDay = stocks[currentDay];

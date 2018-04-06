@@ -37,7 +37,7 @@ function setValue(row, column) {
 function playerAction() {
     var rowChoice = parseInt(prompt("Enter a row: "));
     var columnChoice = parseInt(prompt("Enter a column: "));
-    if (positionState(rowChoice, columnChoice) == null) {
+    if (positionState(rowChoice, columnChoice) === null) {
         setValue(rowChoice, columnChoice);
         if (playerTurn === "X") {
             playerTurn = "O"
