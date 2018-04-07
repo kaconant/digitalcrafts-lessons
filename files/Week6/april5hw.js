@@ -4,9 +4,11 @@ in the given array. */
 
 var arr = [-3, -2, -1, 0, 1, 2, 3, 4];
 
+function positiveNumbers(array) {
 var newArray = arr.filter(function(element) {
     return element > 0;
 });
+}
 
 console.log(newArray);
 
@@ -16,9 +18,11 @@ in the given array. */
 
 var arr = [0, 1, 2, 3, 4];
 
+function evenNumbers(array) {
 var newestArray = arr.filter(function(element) {
     return element % 2 === 0;
 });
+}
 
 console.log(newestArray);
 
@@ -29,9 +33,11 @@ xample: squareTheNumbers([1, 2, 3]) should give [1, 4, 9]. */
 
 var arr = [0, 1, 2, 3, 4];
 
+function squareNumbers(array) {
 var newerArray = arr.map(function(element) {
     return element * element;
 });
+}
 
 console.log(newerArray);
 
@@ -44,9 +50,18 @@ var cities = [
     { name: 'New York', temperature: 80.0 }
 ];
 
-var newestCities = cities.filter(function(city) {
-    return city.temperature < 70.0
-});
+function cities1(array) {
+    return cities.filter(function(city) {
+        return city.temperature < 70.0
+    });
+}
+
+/* function cities1(array) {
+	return array.filter(function(item){
+		return item.temperature < 70;
+	});
+}
+*/
 
 console.log(newestCities);
 
@@ -61,11 +76,21 @@ var cities = [
     { name: 'New York', temperature: 80.0 }
 ];
 
-var newestCities = cities.map(function(city) {
-    return city.name;
-});
+function cities2(array) {
+    return cities.map(function(city) {
+        return city.name;
+    });
+}
 
 console.log(newestCities);
+
+/*
+function cities2(array) {
+	return array.map(function(item){
+		return item.name;
+	});
+}
+*/
 
 // good job! 
 
@@ -87,9 +112,11 @@ var people = [
     'Ben'
 ];
 
-var newPeople = people.forEach(function(element) {
-    console.log("Good Job, " + element + "!")
+function goodJob(array) {
+    array.forEach(function(element) {
+        console.log("Good Job, " + element + "!")
 });
+}
 
 // Sort an array:
 // Given an array of strings such the array of names 
@@ -113,7 +140,10 @@ var people = [
     'Ben'
 ];
 
-var newPeople = people.sort(); 
+function sort1(array) {
+    people.sort(); 
+}
+
 console.log(newPeople);
 
 // Sort an array, 2 :
@@ -138,12 +168,14 @@ var people = [
     'Ben'
 ];
 
-var newestPeople = people.sort(function(num1, num2) {
-    return num1.length - num2.length;
-}); 
+function sort2(array) {
+    people.sort(function(num1, num2) {
+        return num1.length - num2.length;
+    }); 
+}
 console.log(newestPeople);
 
-// sort an erray, 3:
+// sort an array, 3:
 
 var arr = [
     [1, 3, 4],
@@ -151,11 +183,22 @@ var arr = [
     [3, 6]
 ];
 
-var sumArray = arr.sort(function(num1, num2, num3, num4) {
-    return num1 + num2 + num3 + num4;
-});
+// if sum of a's number is less than the sum of b's numbre
+// then a comes first. return neg number.
+// if sum of b's number is less than the sum of a's numbre
+// then b comes first. return pos number.
+function sort3(array) {
+    arr.sort(function(a, b) {
+        var sum = function(acc, item) {
+            return acc + item;
+        }
+    var aSum = a.reduce(sum, 0);
+    var bSum = b.reduce(sum, 0);
+    return aSum - bSum;
+    });
+}
 
-console.log(sumArray);
+console.log(arr);
 
 // 3 times
 
@@ -165,28 +208,37 @@ function call3Times(fun) {
     fun();
 }
 
-// call3Times(fun);
+call3Times(function) {
+    console.log("Hello, world!");
+}
 
 // n times
 
-// callNTimes(n, fun)
+function callNTimes(num, fun) {
+    for (var i=0; i < num.length; i++) {
+        fun();
+    }
+}
 
 // sum an array
 
-var sum = [0 , 1 , 2 , 3 ]
-
-var newSum = sum.reduce(function(adding, currentValue) {
-    return adding + currentValue;
-}, 0);
+function sum(array) {
+    return array.reduce(function(adding, currentValue) {
+        return adding + currentValue;
+    }, 0);
+    
+}
 
 console.log(newSum);
 
 // acronym 
 
-var words = ["Throw", "Back", "Thursday"];
-var accWords = words.reduce(function(a, b) {
-    return a[0] + b[0];
-});
+function acronym(array) {
+    return array.reduce(function(acc, currentVal) {
+        return acc + currentVal[0];
+    }, "");
+}
+
 console.log(accWords);
 
 // Bonus: .forEach 
@@ -215,14 +267,12 @@ var map = function(arr, callback) {
     // return new array with new info
     // each new item has to be result of callback, passing in 1 item
     var newArray = [];
-    
     for (var i=0; i < arr.length; i++) {
         var item = arr[i];
         var newItem = callback(item);
         // or var newItem = callback(arr[i]);
         newArray.push(newItem);
     } 
-
     return newArray;
 }
 
