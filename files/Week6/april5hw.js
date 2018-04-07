@@ -188,3 +188,46 @@ var accWords = words.reduce(function(a, b) {
     return a[0] + b[0];
 });
 console.log(accWords);
+
+// Bonus: .forEach 
+// Implement your own custom forEach function which takes two arguments: 
+// an array arr and a function fun. 
+// It will call fun passing each item in arr to fun as the first argument. 
+
+var forEach = function(arr, callback) {
+    // loop over the input array
+    // call the callback on each item of the array
+    for (var i=0; i < arr.length; i++) {
+        callback(arr[i]);
+    }
+}
+
+forEach([1,2,3], function(item) {
+    console.log(item);
+});
+
+// Bonus .Map
+// Implement your own custom map function which takes two arguments: 
+// an array arr and a function fun. It will return a new array, 
+// with each of its results being the result of calling fun with each array element.
+
+var map = function(arr, callback) {
+    // return new array with new info
+    // each new item has to be result of callback, passing in 1 item
+    var newArray = [];
+    
+    for (var i=0; i < arr.length; i++) {
+        var item = arr[i];
+        var newItem = callback(item);
+        // or var newItem = callback(arr[i]);
+        newArray.push(newItem);
+    } 
+
+    return newArray;
+}
+
+var result = map([1, 2, 3], function(item) {
+    return item * item;
+});
+
+console.log(result);
