@@ -8,7 +8,6 @@ function positiveNumbers(array) {
 var newArray = arr.filter(function(element) {
     return element > 0;
 });
-}
 
 console.log(newArray);
 
@@ -187,6 +186,7 @@ var arr = [
 // then a comes first. return neg number.
 // if sum of b's number is less than the sum of a's numbre
 // then b comes first. return pos number.
+
 function sort3(array) {
     arr.sort(function(a, b) {
         var sum = function(acc, item) {
@@ -208,9 +208,9 @@ function call3Times(fun) {
     fun();
 }
 
-call3Times(function) {
+call3Times(function() {
     console.log("Hello, world!");
-}
+});
 
 // n times
 
@@ -226,7 +226,6 @@ function sum(array) {
     return array.reduce(function(adding, currentValue) {
         return adding + currentValue;
     }, 0);
-    
 }
 
 console.log(newSum);
@@ -237,9 +236,8 @@ function acronym(array) {
     return array.reduce(function(acc, currentVal) {
         return acc + currentVal[0];
     }, "");
-}
-
-console.log(accWords);
+};
+console.log(acronym);
 
 // Bonus: .forEach 
 // Implement your own custom forEach function which takes two arguments: 
@@ -266,14 +264,14 @@ forEach([1,2,3], function(item) {
 var map = function(arr, callback) {
     // return new array with new info
     // each new item has to be result of callback, passing in 1 item
-    var newArray = [];
+    var newArray1 = [];
     for (var i=0; i < arr.length; i++) {
         var item = arr[i];
         var newItem = callback(item);
         // or var newItem = callback(arr[i]);
-        newArray.push(newItem);
+        newArray1.push(newItem);
     } 
-    return newArray;
+    return newArray1;
 }
 
 var result = map([1, 2, 3], function(item) {
