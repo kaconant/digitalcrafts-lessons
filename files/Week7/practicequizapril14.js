@@ -3,7 +3,7 @@ var array = [{foo: "bar"}, {foo: [1, 2]}]; // foo:bar is first current item (fir
 
 array.forEach(function(currentItem) {
     console.log(currentItem.foo);
-    console.log(currentItem[0]);
+    console.log(currentItem.foo[0]);
 })
 
 // what 4 items will be logged in order?
