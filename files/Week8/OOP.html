@@ -1,0 +1,140 @@
+<!--
+
+Object = has key and value, it's a pair. reach it by using the .
+everything has __proto__ = never mess with this
+
+Prototypical Inheritance 
+Every object has a key/value pair as well as a prototype which also has an object
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            console.log('hey');
+
+            var myMoviesModule = {
+                movies: [],
+                render: function() {
+                    $('form').on('submit', this.searchAPI) // *this* is referring to myMoviesModule
+                },
+                bindListeners: function() {
+                    var finalHTML = '';
+                    this.movies.forEach(function(movie) {
+                        finalHTML += '<h1>' + movie.Title + '</h1>'
+                    }); 
+                    $('movies-container').html(finalHTML);
+                },
+                searchAPI: function() {
+                    var keyword = $('input').val();
+                    $('.loading').show();
+                    $.get('https://omdapi.org/?apikey=23423=' + keyword,
+                    function(response) {
+                        this.movies = response;
+                        this.render();
+                    });
+                },
+            };
+
+            var myWatchlistModule = {
+                movies: [],
+                render: function() {
+
+                }
+            }
+
+            myMoviesModule.searchAPI("dark");
+
+        </script>
+    </head>
+</html>
+
+
+<!-- 
+    in JS file
+
+var APP = {
+    moviesModule: myMoviesModule,
+    watchlistModuleL myWatchlistModule,
+    initialize: function() {
+        this.$app = $('.app');
+        this.loadMoviesModule();
+    }
+    loadMoviesModule: function() {
+        this.$app.html(this.moviesModule.render());
+    }
+}
+
+APP.initalize();
+
+-
+    in JS file
+
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log('hi');
+}
+
+Person.prototype.hair = "yes"
+
+var result = new Person('Adam');
+
+-!-
+
+function Card(suit, value) {
+    this.suit = suit; // saved in the brain of this card
+    this.value = value;
+    this.isFaceUp = false; // all cards face down by default
+}
+
+Card.prototype.flip = function() {
+    this.isFaceUp = !this.isFaceUp;
+}
+
+Card.prototype.render = function() {
+    return "<img src ='images/card.png' />";
+}
+
+function Deck() {
+    var deck = [];
+    var suits = ['clubs', 'hearts', 'spades', 'diamonds']
+    for (var i=0; i<52; i++) {
+        var newCardsSuit = suits[Math.floor(i/13)] //       52 / 13 = 4
+        var newCardsValue = (i%13) + 1;    
+        var newCard = new Card( newCardsSuit, newCardValue )
+        this.deck.push(newCard);
+    }
+}
+
+Deck.prototype.shuffle = function() {
+    // write code here to shuffle the cards in this.deck
+};
+
+Deck.prototype.removeTopCard = function() {
+    var topCard = this.deck.pop();
+    return topCard;
+}
+
+function Player() {
+    this.name = name;
+}
+
+Player.prototype.drawCard = function(deck) {
+    var drawnCard = deck.removeTopCard;
+    this.hand.push(drawnCard);
+}
+
+var newDeck = new Deck();
+
+console.log(newDeck.deck)
+
+// let's flip top card in deck
+
+newDeck.deck[0].flip();
+
+newDeck.shuffle();
