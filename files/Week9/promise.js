@@ -146,7 +146,6 @@ getDogImage.then(function(value) {
 ----- ex: 5 // LOL, jQuery makes it hella easier  -------
 
 let getDogImage = $.get(https://dog.ceo/api/breeds/image/random');
-});
 
 getDogImage.then(function(value){     
     console.log('The promise was resolved. It has a value of' + value)
@@ -156,7 +155,7 @@ getDogImage.then(function(value){
 }).then(function(value){
     console.log('the second promise was resolved! it has a value of' + );
     console.log(value);
-    
+
 }).catch(function(error){
     console.log(error);
 });
