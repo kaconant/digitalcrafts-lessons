@@ -18,23 +18,28 @@ let getDogImage = $.get('https://dog.ceo/api/breed/beagle/images/random');
 
 getDogImage
     .then(function(value) {
-        console.log('Data was fetched! It has a value of' + value)
+        console.log('Data was fetched! It has a value of')
+        console.log(value)
         return $.get('https://dog.ceo/api/breed/chow/images/random');
     })
     .then(function(value) {
-        console.log('Data was fetched! It has a value of' + value)
+        console.log('Data was fetched! It has a value of')
+        console.log(value)
         return $.get('https://dog.ceo/api/breed/akita/images/random');
     })
     .then(function(value) {
-        console.log('Data was fetched! It has a value of' + value)
+        console.log('Data was fetched! It has a value of')
+        console.log(value)
         return $.get('https://dog.ceo/api/breed/dingo/images/random');
     })
     .then(function(value) {
-        console.log('Data was fetched! It has a value of' + value)
+        console.log('Data was fetched! It has a value of')
+        console.log(value)
         return $.get('https://dog.ceo/api/breed/eskimo/images/random');
     })
     .then(function(value) {
-        console.log('Data was fetched! It has a value of' + value)
+        console.log('Data was fetched! It has a value of')
+        console.log(value)
     })
     .catch(function(error) {
         console.log(error)
@@ -43,13 +48,18 @@ getDogImage
 // ---------- Part 2 - Promise.all()
 // Use Promise.all() to retreive all of the URLs above. After it's done, console log "all the data was fetched!"
 
-promise.all([$.get('https://dog.ceo/api/breed/beagle/images/random'), $.get('https://dog.ceo/api/breed/chow/images/random'), $.get('https://dog.ceo/api/breed/akita/images/random'), $.get('https://dog.ceo/api/breed/dingo/images/random') ,$.get('https://dog.ceo/api/breed/eskimo/images/random')])
+Promise.all([$.get('https://dog.ceo/api/breed/beagle/images/random'), $.get('https://dog.ceo/api/breed/chow/images/random'), $.get('https://dog.ceo/api/breed/akita/images/random'), $.get('https://dog.ceo/api/breed/dingo/images/random') ,$.get('https://dog.ceo/api/breed/eskimo/images/random')])
     .then((values) => {
-        console.log('Data was fetched! It has a value of' + values[0]);
-        console.log('Data was fetched! It has a value of' + values[1]);
-        console.log('Data was fetched! It has a value of' + values[2]);
-        console.log('Data was fetched! It has a value of' + values[3]);
-        console.log('Data was fetched! It has a value of' + values[4]);
+        console.log('Data was fetched! It has a value of')
+        console.log(values[0]);
+        console.log('Data was fetched! It has a value of')
+        console.log(values[1]);
+        console.log('Data was fetched! It has a value of')
+        console.log(values[2]);
+        console.log('Data was fetched! It has a value of')
+        console.log(values[3]);
+        console.log('Data was fetched! It has a value of')
+        console.log(values[4]);
     });
 
 /* per Chris -- both work: 
@@ -77,7 +87,7 @@ Promise.all([a,b,c,d,e]).then(function(data){console.log('data was fetched.')});
 
 function addNumbers(x, y) { 
     return new Promise(function(resolve,reject) {
-        if (isNan(x) || isNan(y)) { 
+        if (isNaN(x) || isNaN(y)) { 
             reject(new Error('Error: This input is not a number'));     
         } else {
             resolve(x + y); 
@@ -87,7 +97,7 @@ function addNumbers(x, y) {
 
 // adam provided following code: 
 
-addNumbers(x,y)
+addNumbers(3 , 7)
     .then(function (answer) {
     console.log(answer);
     })
@@ -120,7 +130,7 @@ dropButteredToastOnFloor(()=>{
 // YOUR TASK- Write a function called dropToastPromisified(), make it return a new Promise(), 
 // and use the dropButteredToastOnFloor() function to call either resolve() or reject(). 
 
-function dropButteredPromisified() { 
+function dropToastPromisified() { 
     return new Promise(function(resolve, reject) {
         if (drop < 0.5) {
             alert('Whew, that was close!');
