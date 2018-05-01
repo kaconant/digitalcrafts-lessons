@@ -88,7 +88,7 @@ Promise.all([a,b,c,d,e]).then(function(data){console.log('data was fetched.')});
 function addNumbers(x, y) { 
     return new Promise(function(resolve,reject) {
         if (isNaN(x) || isNaN(y)) { 
-            reject(new Error('Error: This input is not a number'));     
+            reject(new Error('This input is not a number'));     
         } else {
             resolve(x + y); 
         }
@@ -97,7 +97,7 @@ function addNumbers(x, y) {
 
 // adam provided following code: 
 
-addNumbers(3 , 7)
+addNumbers(3 , 7) // "x" -- > will cause the reject to happen
     .then(function (answer) {
     console.log(answer);
     })
