@@ -45,6 +45,10 @@ getDogImage
         console.log(error)
     });
 
+/*
+
+*/
+
 // ---------- Part 2 - Promise.all()
 // Use Promise.all() to retreive all of the URLs above. After it's done, console log "all the data was fetched!"
 
@@ -62,7 +66,7 @@ Promise.all([$.get('https://dog.ceo/api/breed/beagle/images/random'), $.get('htt
         console.log(values[4]);
     });
 
-/* per Chris -- both work: 
+/* Chris's Answer:
 
 var urls = [
 'https://dog.ceo/api/breed/beagle/images/random',
@@ -79,6 +83,20 @@ var d = $.get(urls[3]);
 var e = $.get(urls[4]);
 
 Promise.all([a,b,c,d,e]).then(function(data){console.log('data was fetched.')});
+
+or
+
+Adam's Answer:
+
+let promises = urls.map(url => {
+    return $.get(url);
+});
+
+Promise.all(promises)
+    .then(function(responses) {
+        console.log(responses);
+        console.log("Data was fetched")
+    });
 */
 
 // ----------- Part 3 - Resolve Reject
@@ -101,7 +119,7 @@ addNumbers(3 , 7) // "x" -- > will cause the reject to happen
     .then(function (answer) {
     console.log(answer);
     })
-    .catch(function (error) {
+    .catch(function(error) {
     console.log(error);
     });
 
@@ -121,7 +139,7 @@ if (drop < 0.5) {
 // To react to the dropping of toast, we have to provide callbacks for each possibility: 
 // dropping butter side up, or butter side down.
 
-dropButteredToastOnFloor(()=>{
+dropButteredToastOnFloor(() => {
     alert('Whew, that was close!');
 }, ()=>{
     alert('Well shucks, there goes my toast...');
@@ -132,13 +150,15 @@ dropButteredToastOnFloor(()=>{
 
 function dropToastPromisified() { 
     return new Promise(function(resolve, reject) {
-        if (drop < 0.5) {
-            alert('Whew, that was close!');
-            resolve();
-        } else {
-            alert('Well shucks, there goes my toast...');
-            reject();
-        }
+        dropButteredToastOnFloor(resolve, reject);
+        /* 
+        OR-------
+        $.ajax({
+            method: "GET",
+            url: "blah.com",
+            success:resolve,
+        })
+    */
     });
 };
 
