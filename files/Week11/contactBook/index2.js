@@ -4,14 +4,16 @@ const express = require('express');
 const util = require('util');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const app = express();
-
-app.use(bodyParser.urlencoded({extended:false})); // make our body available to us as a group of fields, and will turn into JSON if needs too
-app.use(bodyParser.json());
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
+const app = express();
+
+// middleware
+app.use(express.static('public')); // created public folder + index.html file
+app.use(bodyParser.urlencoded({extended:false})); // make our body available to us as a group of fields, and will turn into JSON if needs too
+app.use(bodyParser.json());
 
 app.get('/', (request, result) => { // '/' - root directory of app, send data back to the client ()
     readFile('blog-data.json')
