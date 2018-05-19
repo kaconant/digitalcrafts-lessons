@@ -90,3 +90,11 @@ npm install --save-dev nodemon
 if you want to do a custom npm - go package.json and go under scripts and add "dev"
 
 * homework: instead of using ajax, use handlebars
+
+///
+
+git init
+git add .
+git commit -m 
+git remote add origin [copied web address]
+git push --set-upstream origin master
