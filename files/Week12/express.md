@@ -158,7 +158,8 @@ index.js will include:
     <% }) %>
 <% include partials/footer %>
 
-
+34:51
+https://www.youtube.com/watch?v=gnsO8-xJ8rs
 
 #Forms and Input
 
