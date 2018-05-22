@@ -10,7 +10,7 @@ Ques:
 # Handlebars?
 Middleware that lets you do templating, explains how HTML format should be. hbs is extenstion for handlebars
 
-#Template?
+# Template?
 mostly just HTML + JS formatting
 comments in handlebar {{! blah blah blah }}
 {{#each members }} -- forEach loop formatting in hbs, ends with {{/each}}
@@ -24,7 +24,7 @@ res.render = what you'll use in one of your route handlers instead of res.send o
 
 layout.hbs is skeleton of html
 
-#Example of template
+# Example of template
 
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@ directory structure
 ---sidebar.hbs
 --errors.hbs
 
-#partials
+# Partials
 
 specifically for partials:
 let expressHbs = require('express-handlebars');
@@ -56,7 +56,7 @@ let expressHbs = require('express-handlebars');
 
 ------
 
-#Express.js Generator
+# Express.js Generator
 
 * Express Generator: comandline tool that will start your project for you, set up your different folders, config for template library, etc
 
@@ -98,3 +98,13 @@ git add .
 git commit -m 
 git remote add origin [copied web address]
 git push --set-upstream origin master
+
+///
+
+bodyParser - when a browser sends data to server, there is no real way for the server to understand that format that it's in. you can look at header information and see the structure and type of info. 
+
+bodyParser.json --> allows you to look at the data and request that is coming through and it will determine if its JSON data and transform it into something useful. same as json.parse. represent a javascript object in a string of text. 
+
+bodyParser.urlencoded --> changes some of the characters to fit into a URL for browser
+
+cookieParser - makes sure that the cookie data matches the URL. helps makes a cookie for your domain. look for that particular cookie property in header information. good for checking for authentication. 
