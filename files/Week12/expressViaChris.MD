@@ -108,3 +108,5 @@ bodyParser.json --> allows you to look at the data and request that is coming th
 bodyParser.urlencoded --> changes some of the characters to fit into a URL for browser
 
 cookieParser - makes sure that the cookie data matches the URL. helps makes a cookie for your domain. look for that particular cookie property in header information. good for checking for authentication. 
+
+debugger via chrome - allows you to check out the information from the server much like inspect does for the front end. 
