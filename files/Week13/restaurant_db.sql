@@ -89,7 +89,7 @@ select *
 
 select * 
     from restaurant1
-    order by distance limit 2;
+    -- order by distance limit 2;
 
 -- 3.  list the top 2 restaurants by stars.
 
@@ -102,14 +102,14 @@ select *
 select * 
     from restaurant1
     where distance <= 2
-    order by stars desc limit 2;
+    -- order by stars desc limit 2;
 
 -- 5. count the number of restaurants in the db
 
 select * 
-    from restaurant1
+    -- from restaurant1
     where distance <= 2
-    order by stars desc limit 2;
+    -- order by stars desc limit 2;
 
 -- 6. count the number of restaurants by category.
 
