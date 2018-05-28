@@ -58,3 +58,10 @@ Columns - individual values
 - only use = 
 - can combine two clauess with the word and
 - finding something like this: like '%tennis%';
+
+
+# How PostgreSQL works:
+0. this is under the impression you are importing a database
+1. Go into Postico and make database name
+2. post in terminal in the folder where the databse information is: psql database name -f database.sql
+3. should be updated for you to see those tables in postico
