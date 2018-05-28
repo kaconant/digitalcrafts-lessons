@@ -18,6 +18,8 @@ NoSQL databases are good for:
 
 ------
 
+# BASICS
+
 Q#1 - How can you retrieve all the information from the cd.facilities table?
 
 A#1 - select * from cd.facilities;  
