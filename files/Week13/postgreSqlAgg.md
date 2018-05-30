@@ -10,6 +10,7 @@ When SQL statements have both a WHERE clause and HAVING clause, keep in mind the
 
 - Select
 - From
+- Inner Join / On
 - Where 
 - Group By
 - Having 

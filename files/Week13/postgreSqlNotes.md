@@ -59,7 +59,6 @@ Columns - individual values
 - can combine two clauess with the word and
 - finding something like this: like '%tennis%';
 
-
 # How PostgreSQL works:
 0. this is under the impression you are importing a database
 1. Go into Postico and make database name
