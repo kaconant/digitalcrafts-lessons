@@ -4,7 +4,7 @@ select tracks.name AS "track name", album.name as "album name"
 	from tracks
 	inner join album
 		on tracks.albumid = album.id
-		where albumid = 2;
+		where album.id = 2;
 
 2. What are the albums produced by a given artist?
 
@@ -14,8 +14,9 @@ select album.name AS "Album Name", artist.name AS "Artist Name"
 		on album.artistid = artist.id
 		where artist.id = 1;
 
-
 3. What is the track with the longest duration?
+
+SELECT track.name AS "
 
 4. What are the albums released in the 60s? 70s? 80s? 90s?
 
@@ -34,6 +35,16 @@ select album.name AS "Album Name", artist.name AS "Artist Name"
 11. What are the top 5 most often recorded songs?
 
 12. Who are the top 5 song writers whose songs have been most often recorded?
+
+SELECT songwriter.name FROM songwriter
+
+
+SELECT song.name, song.id, count(songid), songwriter.name FROM tracks
+JOIN songs ON tracks.songid = songs.id
+JOIN songwriter on songs.writerid = songwriter.id
+GROUP BY songs.id
+ORDER BY count desc
+LIMIT 5
 
 13. Who is the most prolific song writer based on the number of songs he has written?
 
