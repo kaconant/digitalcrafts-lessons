@@ -19,8 +19,8 @@
 
 # Cycle of Redux:
 
-- State: .subscribe()
-- Views: dispatch({})
+- State: .subscribe ()
+- Views: dispatch ({ })
 - Reducer: function(state, action){} --- causes the state to update
 
 # Tips for Redux
@@ -32,3 +32,8 @@ goes off, etc.), you can dispatch actions
 - Redux will capture those actions and call your reducer, which tells redux what the
 new state should be
 - When the state changes, Redux will call all of your callbacks you subscribed
+
+
+# Josh Notes
+- Selector - selects specific data from store
+- Reducer - manipulates the information the selector gives
