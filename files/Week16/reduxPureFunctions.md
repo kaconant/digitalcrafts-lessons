@@ -86,3 +86,8 @@ function updateArray(array, someIndex) {
         ...arry.slice(someIndex + 1)
     ]
 }
+
+# Follow Up Notes
+
+- Whatever you return is only dependent on what you put in, AKA "deterministic"
+- 
