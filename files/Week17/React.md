@@ -19,8 +19,12 @@
 # 2 Steps for React:
 * Step 1
 - Describe what the DOM should look like (AKA - Create description to DOM)
-- Code > React.createElement()
+- Code > React.createElement(1, 2, 3)
 - Describes what page should look like & creates Virtual DOM
+- 1st argument > location on page
+- 2nd argument > object where you outline properties or null > also called props
+- 3rd argument > function or html information
+* Better way to do with components: React.createElement(myFunction, argument to put in myFunction)
 
 * Step 2
 - Update the DOM to match the description (AKA - Render description to DOM)
@@ -42,6 +46,8 @@
 
 # Terminal
 - Getting rid of git: rm -rf .git
+- Getting install serve to make local 3000 work: npm install -g serve
+- to activate: serve ./ -p 3000
 
 # Create a new repository on the command line
 - git init
@@ -53,3 +59,7 @@
 # Push an existing repository from the command line
 - git remote add origin git@github.com:kaconant/bookstoreReact.git
 - git push -u origin master
+
+# Components
+- Function that returns Virtual DOM elements
+- Building blocks of react - helps you put into small, modular pieces
