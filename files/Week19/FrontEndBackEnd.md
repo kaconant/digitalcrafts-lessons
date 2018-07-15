@@ -52,3 +52,8 @@ Post /guests
 
 - import axios from 'axios'
 - add to front of jQuery
+
+# Tree Data Structure
+
+- Top Component is always App 
+- Start with Router, Routes at very top 
