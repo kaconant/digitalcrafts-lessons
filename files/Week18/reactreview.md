@@ -14,3 +14,12 @@
 - React is purely a tool for front-end
 - Constructor is where we add state: super, this.state
 - Render is where we use JSX
+
+# How to Start React
+
+- Trying to figure out your structure
+- Our components are making a tree structure:
+- Start with App + 5 Components
+- Outline your files + add imports, constructor info, class info, render info, and exports
+- Trees are better when they are wide as opposed to deep
+- Make sure to add .bind(this) to any function you write in your class
