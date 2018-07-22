@@ -58,7 +58,7 @@ let expressHbs = require('express-handlebars');
 
 # Express.js Generator
 
-* Express Generator: comandline tool that will start your project for you, set up your different folders, config for template library, etc
+* Express Generator: command line tool that will start your project for you, set up your different folders, config for template library, etc
 
 * Start a project with express generator: 
 express --view=hbs nameOfApp

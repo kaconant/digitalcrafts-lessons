@@ -33,7 +33,7 @@ goes off, etc.), you can dispatch actions
 new state should be
 - When the state changes, Redux will call all of your callbacks you subscribed
 
-
 # Josh Notes
 - Selector - selects specific data from store
 - Reducer - manipulates the information the selector gives
+}

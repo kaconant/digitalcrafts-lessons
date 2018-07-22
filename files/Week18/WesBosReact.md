@@ -1,3 +1,7 @@
-Componet - reusable piece of your website.
-HTML - made up of tags
-React takes that a step further and allows you to create your own tags
+- Componet - reusable piece of your website
+- HTML - made up of tags
+- React takes that a step further and allows you to create your own tags
+- State is where the data lives and props is how you get the data where it needs to go
+- Props is like object of data that gets passed in, much like an html attribute
+- == $0 allows you to select a tag in your console
+- == $r is the component's instance (as a component is really just an object)
